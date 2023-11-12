@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animalia Insights | Make a post</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link href="styles.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous" defer></script>
+</head>
+
+<body>
+    <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom container">
+        <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
+          <img src="/images/Logo-img.png" class="bi me-2" width="300" height="45">
+        </a>
+      
+        <ul class="nav">
+          <li class="nav-item"><a href="/" class="nav-link px-2" aria-current="page">Home</a></li>
+          <li class="nav-item"><a href="/articles/new" class="nav-link px-2 link-secondary">Make a Post</a></li>
+          <li class="nav-item"><a href="/about" class="nav-link px-2">About</a></li>
+        </ul>
+    </header>
+    
+    <div class="container my-5">
+        <div class="p-5 text-center bg-body-tertiary rounded-3">
+          <h1 class="text-body-emphasis">Write a new post</h1>
+          <p class="lead">
+            This is a place for creators to share their toughts on the animal world. Fell free to become a creator as well and help build this dedicated community.
+          </p>
+          <form class="d-flex flex-wrap flex-column align-items-start" id="make-a-post-form" action="/articles" method="POST">
+            <%- include("form_fields") %>
+          </form>
+        </div>
+    </div>
+
+    <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top container">
+        <p class="col-md-4 mb-0 text-body-secondary">© <%= new Date().getFullYear(); %> Darian Silisteanu</p>
+        <ul class="nav col-md-4 justify-content-end">
+          <li class="nav-item"><a href="/" class="nav-link px-2 text-body-secondary">Home</a></li>
+          <li class="nav-item"><a href="/articles/new" class="nav-link px-2 text-body-secondary">Make a Post</a></li>
+          <li class="nav-item"><a href="/about" class="nav-link px-2 text-body-secondary">About</a></li>
+        </ul>
+    </footer>
+</body>
+</html>

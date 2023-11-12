@@ -1,0 +1,124 @@
+/* #eab037 - most color
+#ebbb59
+#ecc77b
+#edd39e - least color */
+
+.border-bottom{
+    border-bottom: 1px solid #edd39e!important;
+}
+
+.border-top{
+    border-top: 1px solid #edd39e!important;
+}
+
+.bg-body-tertiary{
+    background-color: #edd39e7c!important;
+}
+
+.form-fields{
+    border: 0;
+    border-bottom: 1px solid rgb(163, 163, 163);
+}
+
+.form-fields:focus{
+    outline: none;
+    border: 0;
+    border-bottom: 1px solid black;
+}
+
+.form-fields::placeholder{
+    font-style: italic;
+}
+
+.comment{
+    width: 100%;
+    border: 0;
+    border-bottom: 1px solid rgb(163, 163, 163);
+}
+
+.comment:focus{
+    outline: none;
+    border: 0;
+    border-bottom: 1px solid black;
+}
+
+.comment::placeholder{
+    font-style: italic;
+}
+
+.submit-btn{
+    background-color: transparent;
+    border: 0;
+    border-bottom: 1px solid rgb(163, 163, 163);
+    font-style: italic;
+    cursor: pointer;
+    height: 30px;
+    margin-top: auto;
+}
+
+.input-labels{
+    margin-bottom: 30px;
+    width: 30%;
+}
+
+@media (max-width: 767px){
+    .input-labels{
+        width: 100%;
+    }
+}
+
+.text-labels{
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+.titles-input{
+    width: 100%;
+}
+
+#writtenText{
+    width: 100%;
+    height: 200px;
+}
+
+.hover:hover{
+    opacity: 0.8;
+}
+
+.nav-link{
+    color: #ecc77b;
+}
+
+.nav-link:hover{
+    color: black;
+}
+
+.link-secondary{
+    color: black;
+}
+
+.auth-date{
+    font-size: 1.2rem;
+}
+
+.post-tags{
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.delete-comm{
+    margin-top: auto;
+    font-style: italic;
+    opacity: 0.4;
+    text-align: center;
+    background-color: transparent;
+    padding: 0;
+    border: 0;
+}
+
+.delete-comm:hover{
+    color: red;
+    cursor: pointer;
+    opacity: 0.8;
+}
+

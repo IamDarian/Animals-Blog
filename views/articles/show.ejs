@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animalia Insights | Article</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link href="/styles.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous" defer></script>
+</head>
+
+<body>
+    <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom container">
+        <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
+            <img src="/images/Logo-img.png" class="bi me-2" width="300" height="45">
+        </a>
+      
+        <ul class="nav">
+          <li class="nav-item"><a href="/" class="nav-link px-2" aria-current="page">Home</a></li>
+          <li class="nav-item"><a href="/articles/new" class="nav-link px-2">Make a Post</a></li>
+          <li class="nav-item"><a href="/about" class="nav-link px-2">About</a></li>
+        </ul>
+    </header>
+
+    <div class="container">
+        <div class="row g-5">
+            <div class="col-md-8">
+
+                <article class="blog-post">
+                    <h2 class="display-5 link-body-emphasis mb-1"><%= article.title %></h2>
+                    <p class="blog-post-meta"><%= article.createdAt.toLocaleDateString() %> by <span><%= article.author %></span></p>
+                    <div class="d-flex flex-row">
+                        <a href="/articles/edit/<%= article.id %>" class="btn btn-outline-warning mb-3 mr-3">Edit</a>
+                        <form action="/articles/<%= article.id %>?_method=DELETE" method="POST">
+                            <button type="submit" class="btn btn-outline-danger mx-3">Delete</button>
+                        </form>
+                    </div>
+                    <p><%= article.description %></p>
+                    <hr>
+                    <p></p>
+                    <div class="container my-5">
+                        <div class="text-center">
+                            <img class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="800" height="600" src="/images/Template-img<%= article.imgRandomizer %>.jpg" role="img" aria-label="Placeholder: 800x600" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-bg)"></rect></img>
+                        </div>
+                    </div>
+                    <p><%= article.writtenText %></p>
+                    <h3 class="mt-5">Write your toughts:</h3>
+                    <form class="d-flex flex-wrap" action="/articles/<%= article.id %>" method="POST">
+                        <label for="name"><input name="username" type="text" id="username" class="form-fields" placeholder="Username" required></label>
+                        <label for="comment" class="comment mt-3 d-flex"><textarea name="comment" class="comment" id="comment" type="text" placeholder="Write your thoughts" maxlength="1000" required></textarea><button type="submit" class="submit-btn">Submit</button></label>
+                    </form>
+                    <h2 class="mt-5">Comments</h2>
+                    <% article.comments.forEach(comment => { %>
+                        <div class="submitted comment d-flex flex-column mt-3">
+                            <p class="comment-auth">Author: <%= comment.username %></p>
+                            <div class="d-flex justify-content-between">
+                                <p class="comment-text"><%= comment.comment %></p>
+                                <form action="/articles/<%= article.id %>/<%= comment.id %>?_method=DELETE" method="POST">
+                                    <button type="submit" class="delete-comm">Delete comment</button>
+                                </form>
+                            </div>
+                        </div>
+                    <% }) %>
+                </article>
+                
+            </div>
+    
+            <div class="col-md-4">
+                <div class="position-sticky" style="top: 2rem;">
+                    <div class="p-4 mb-3 bg-body-tertiary rounded">
+                        <h4 class="fst-italic">About</h4>
+                        <p class="mb-0">Customize this section to tell your visitors a little bit about your publication, writers, content, or something else entirely. Totally up to you.</p>
+                        <a href="/about">Read More ></a>
+                    </div>
+    
+                    <div class="p-4">
+                        <h4 class="fst-italic">Share</h4>
+                        <ol class="list-unstyled">
+                            <li><a href="https://github.com/" target="_blank">GitHub</a></li>
+                            <li><a href="https://twitter.com/" target="_blank">Twitter</a></li>
+                            <li><a href="https://www.facebook.com/" target="_blank">Facebook</a></li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top container">
+        <p class="col-md-4 mb-0 text-body-secondary">© <%= new Date().getFullYear(); %> Darian Silisteanu</p>
+        <ul class="nav col-md-4 justify-content-end">
+          <li class="nav-item"><a href="/" class="nav-link px-2 text-body-secondary">Home</a></li>
+          <li class="nav-item"><a href="/articles/new" class="nav-link px-2 text-body-secondary">Make a Post</a></li>
+          <li class="nav-item"><a href="/about" class="nav-link px-2 text-body-secondary">About</a></li>
+        </ul>
+    </footer>
+</body>
+
+</html>

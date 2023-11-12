@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link href="styles.css" rel="stylesheet">
+    <title>Animalia Insights</title>
+</head>
+<body>
+  <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom container">
+    <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
+      <img src="/images/Logo-img.png" class="bi me-2" width="300" height="45">
+    </a>
+
+    <ul class="nav">
+      <li class="nav-item"><a href="/" class="nav-link px-2 link-secondary" aria-current="page">Home</a></li>
+      <li class="nav-item"><a href="/articles/new" class="nav-link px-2">Make a Post</a></li>
+      <li class="nav-item"><a href="/about" class="nav-link px-2">About</a></li>
+    </ul>
+  </header>
+
+  <div class="my-5">
+    <div class="p-5 text-center bg-body-tertiary">
+      <div class="container py-5">
+        <h1 class="text-body-emphasis">Welcome to our website</h1>
+        <p class="col-lg-8 mx-auto lead">
+          Explore the fascinating world of animals with us at Animalia Insights. We're your go-to source for heartwarming stories, wildlife wonders, and everything in between. Whether you're a dedicated pet parent or a nature enthusiast, our blog is here to kindle your love for all creatures great and small.
+          Join us on this extraordinary journey, and let's celebrate the beauty and diversity of the animal kingdom together. From cute and cuddly companions to awe-inspiring wildlife, we've got it all. Get ready to be inspired and informed about the incredible creatures that share our planet.
+          <br><br>
+          Start your adventure with Animalia Insights today!
+        </p>
+      </div>
+    </div>
+  </div>
+
+    <% articles.forEach(article => { %>
+        <div class="container">
+            <div class="row featurette mb-5">
+              <div class="col-md-8 order-md-2">
+                <h2 class="featurette-heading fw-normal lh-1"><%= article.title %> <span class="text-body-secondary fs-3">by <%= article.author %></span></h2>
+                <div class="auth-date d-flex justify-content-between">
+                    <p class="post-tags text-muted"><%= article.tags %></p>
+                    <p class="post-date text-muted"><%= article.createdAt.toLocaleDateString() %></p>
+                </div>
+                <p class="lead mt-3"><%= article.description %></p>
+                <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                  <a href="/articles/<%= article.id %>" class="btn btn-outline-warning mb-3">Read More</a>
+                </div>
+              </div>
+              <div class="col-md-4 order-md-1">
+                <a href="/articles/<%= article.id %>"><img class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto hover" width="100%" height="100%" src="/images/Template-img<%= article.imgRandomizer %>.jpg" role="img" aria-label="Placeholder: 350x350" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-bg)"></rect></img></a>
+              </div>
+            </div>
+        </div>
+    <% }) %> 
+
+    <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top container">
+      <p class="col-md-4 mb-0 text-body-secondary">© <%= new Date().getFullYear(); %> Darian Silisteanu</p>
+      <ul class="nav col-md-4 justify-content-end">
+        <li class="nav-item"><a href="/" class="nav-link px-2 text-body-secondary">Home</a></li>
+        <li class="nav-item"><a href="/articles/new" class="nav-link px-2 text-body-secondary">Make a Post</a></li>
+        <li class="nav-item"><a href="/about" class="nav-link px-2 text-body-secondary">About</a></li>
+      </ul>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,13 @@
+<label class="input-labels" for="author"><input type="text" name="author" maxlength="30" placeholder="Author name" class="form-fields titles-input" id="author" value="<%= article.author %>" required></label>
+
+<label class="input-labels" for="title"><input type="text" name="title" maxlength="50" placeholder="Title" class="form-fields titles-input" id="title" value="<%= article.title %>" required></label>
+
+<label class="text-labels" for="description"><input type="text" name="description" maxlength="300" placeholder="Write a short description" class="form-fields titles-input" id="description" value="<%= article.description %>" required></label>
+
+<label class="text-labels" for="writtenText"><textarea name="writtenText" placeholder="Write your story here.." class="form-fields" id="writtenText" required><%= article.writtenText %></textarea></label>
+
+<!-- <label class="text-labels"><input type="file" name="picture" class="titles-input"></label> -->
+
+<label class="text-labels" for="tags"><input name="tags" type="text" maxlength="30" placeholder="Tags" class="form-fields titles-input" id="tags" value="<%= article.tags %>" required></label>
+
+<button type="submit" class="btn btn-warning align-self-center">Submit Your Story</button>
