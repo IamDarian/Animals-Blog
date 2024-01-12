@@ -15,3 +15,5 @@ npm run start
 ## About
 This is my first public project which depicts a blog made for people that love animals.🐶
 On this website you will be able read already existing articles, or, better yet, make, edit and delete posts.
+### Website Preview
+![Animalia Insights](https://github.com/IamDarian/Animals-Blog/assets/149789369/c5c9951a-2fb3-4fe1-b83a-d1a10d7c6593)
